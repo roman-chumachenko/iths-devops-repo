@@ -1,2 +1,2 @@
 # DevOps Course Repo
-Rad från B.
+Rad från A och B.
