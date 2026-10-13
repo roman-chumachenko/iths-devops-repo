@@ -15,14 +15,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check the Commit Messages
+        run: ./scripts/check-commit-messages.sh
+        env:
+          BASE_REF: ${{ github.base_ref }}
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+
       - name: Run the Build Script
         run: ./scripts/build.sh
 
       - name: Run the Test Script
         run: ./scripts/test.sh
-
-      - name: Check the Commit Messages
-        run: ./scripts/check-commit-messages.sh
-        env:
-          BASE_REF: ${{ github.base_ref }}
           
