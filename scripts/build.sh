@@ -5,13 +5,15 @@ echo "==> Checking the scripts"
 if command -v shellcheck >/dev/null 2>&1; then
     shellcheck scripts/*.sh
 else
-    echo "ShellCheck is not installed here, so this \
-          step is skipped. The pipeline runs it."
+    echo "ShellCheck is not installed here, so this step is skipped."
 fi
 
 echo "==> Checking that the repo's files exist"
 for file in README.md .gitignore .gitattributes; do
     test -f "$file" || { echo "Missing: $file"; exit 1; }
 done
+
+echo "==> Installing the dependencies"
+npm ci
 
 echo "Build OK"
