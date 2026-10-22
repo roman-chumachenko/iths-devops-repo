@@ -3,7 +3,10 @@ name: Deploy App Service Pipeline
 on:
   push:
     branches: [main]
-
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
