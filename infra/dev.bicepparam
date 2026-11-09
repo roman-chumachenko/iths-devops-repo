@@ -8,3 +8,4 @@ param appName = 'app-waypoint-${name}'
 param linuxFxVersion = 'NODE|24-lts'
 
 param registryName = 'crwaypoint${name}'
+param workspaceName = 'log-waypoint-${name}'
