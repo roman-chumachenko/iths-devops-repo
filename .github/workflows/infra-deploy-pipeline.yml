@@ -1,11 +1,12 @@
 name: Infra and Deploy Pipeline
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "**.md"
-      - "docs/**"
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths-ignore:
+  #     - "**.md"
+  #     - "docs/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
